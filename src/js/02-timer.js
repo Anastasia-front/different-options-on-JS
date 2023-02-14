@@ -1,17 +1,17 @@
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-import { Notify } from "notiflix";
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
+import { Notify } from 'notiflix';
 
 let userDate = null;
-const start = document.querySelector("button[data-start]");
-start.setAttribute("disabled", true);
+const start = document.querySelector('button[data-start]');
+start.setAttribute('disabled', true);
 
-const input = document.querySelector("#datetime-picker");
-const timerElement = document.querySelector(".timer");
-const days = document.querySelector("span[data-days]");
-const hours = document.querySelector("span[data-hours]");
-const minutes = document.querySelector("span[data-minutes]");
-const seconds = document.querySelector("span[data-seconds]");
+const input = document.querySelector('#datetime-picker');
+const timerElement = document.querySelector('.timer');
+const days = document.querySelector('span[data-days]');
+const hours = document.querySelector('span[data-hours]');
+const minutes = document.querySelector('span[data-minutes]');
+const seconds = document.querySelector('span[data-seconds]');
 
 const options = {
   enableTime: true,
@@ -20,17 +20,17 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0] < Date.now()) {
-      Notify.failure("Please choose a date in the future");
+      Notify.failure('Please choose a date in the future');
       userDate = new Date();
     } else {
-      start.removeAttribute("disabled");
+      start.removeAttribute('disabled');
       userDate = selectedDates[0];
     }
   },
 };
 
 function addLeadingZero(value) {
-  return String(value).padStart(2, "0");
+  return String(value).padStart(2, '0');
 }
 
 function convertMs(ms) {
@@ -55,9 +55,6 @@ class Timer {
     this.timerId = null;
   }
   timerStart() {
-    if (this.isActive) {
-      return;
-    }
     this.isActive = true;
     this.timerId = setInterval(() => {
       const currentTime = Date.now();
@@ -70,7 +67,7 @@ class Timer {
       days.textContent = numbers.days;
       if (deltaTime <= 0) {
         this.timerStop();
-        timerElement.innerHTML = "Time is over!";
+        timerElement.innerHTML = 'Time is over!';
       }
     }, 1000);
   }
@@ -81,4 +78,4 @@ class Timer {
 
 const timer = new Timer();
 flatpickr(input, options);
-start.addEventListener("click", () => timer.timerStart());
+start.addEventListener('click', () => timer.timerStart());
