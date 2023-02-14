@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+ul li {
+  list-style: none;
+}
+li a {
+  font-family: serif;
+  letter-spacing: normal;
+  font-size: 20px;
+  text-decoration: none;
+  color: teal;
+}
+li a:hover,
+li a:focus,
+li a:active {
+  color: darkslategray;
+  text-transform: uppercase;
+}
+li a:visited {
+  color: olive;
+}
+p a {
+  font-family: serif;
+  letter-spacing: normal;
+  font-size: 20px;
+  text-decoration: none;
+  color: teal;
+}
+p a:hover,
+p a:focus,
+p a:active {
+  color: rgb(40, 48, 48);
+  text-transform: uppercase;
+}
+p a:visited {
+  color: olive;
+}
+button[data-start],
+button[data-stop],
+#datetime-picker,
+.timer {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px 15px;
+}
+#datetime-picker {
+  margin-bottom: 20px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+}
+.label,
+.value {
+  font-family: serif;
+  font-size: 15px;
+}
+.value {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin-bottom: 7px;
+}
+.label {
+  text-transform: uppercase;
+}
