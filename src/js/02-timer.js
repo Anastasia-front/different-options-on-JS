@@ -55,6 +55,9 @@ class Timer {
     this.timerId = null;
   }
   timerStart() {
+    if (this.isActive) {
+      return;
+    }
     this.isActive = true;
     this.timerId = setInterval(() => {
       const currentTime = Date.now();
